@@ -7,8 +7,8 @@ In this project we use opencv-python to recognize a yellow color ball and track 
 just run the object tracking file using python.
 
 ### Necessary Libraries
-opencv-python
-numpy
-argparse
-imutils
+ opencv-python
+ numpy
+ argparse
+ imutils
 
