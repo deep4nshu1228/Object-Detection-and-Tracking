@@ -1,14 +1,11 @@
 '''
 Color Detection in Python with OpenCV
-    Create by Henry Dang ==> See the tutorial here:
-    https://henrydangprg.com/2016/06/26/color-detection-in-python-with-opencv/
-Adapted by Marcelo Rovai - MJRoBot.org @8Feb18
 '''
 
 import cv2
 import numpy as np
 
-# Read the picure - The 1 means we want the image in BGR
+# Read the picure 1 means we want the image in BGR
 img = cv2.imread('yellow_object.JPG', 1) 
 
 # resize imag to 20% in each axis
