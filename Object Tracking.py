@@ -8,7 +8,6 @@ def mapObjectPosition (x, y):
     print ("[INFO] Object Center coordinates at \
     X0 = {0} and Y0 =  {1}".format(x, y))
 
-
 ap = argparse.ArgumentParser()
 ap.add_argument("-v", "--video",
 	help="path to the (optional) video file")
@@ -38,48 +37,6 @@ while True:
 	frame = imutils.rotate(frame, angle=180)
 
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 
 	mask = cv2.inRange(hsv, colorLower, colorUpper)
 	mask = cv2.erode(mask, None, iterations=2)
@@ -89,8 +46,7 @@ while True:
 	cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL,
 		cv2.CHAIN_APPROX_SIMPLE)[-2]
 	center = None
- 
-
+	
 	if len(cnts) > 0:
 		c = max(cnts, key=cv2.contourArea)
 		((x, y), radius) = cv2.minEnclosingCircle(c)
@@ -113,7 +69,6 @@ while True:
 		thickness = int(np.sqrt(args["buffer"] / float(i + 1)) * 2.5)
 		cv2.line(frame, pts[i - 1], pts[i], (0, 0, 255), thickness)
  
-
 	cv2.imshow("Frame", frame)
 	key = cv2.waitKey(1) & 0xFF
 
